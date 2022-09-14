@@ -1,6 +1,6 @@
 const display = document.getElementById("display");
 const question = document.getElementById("question");
-const startBtn = document.getElementById("start");
+const startBtn = document.getElementById("starts");
 const countdownOverlay = document.getElementById("countdown");
 const resultModal = document.getElementById("result");
 const modalBackground = document.getElementById("modal-background");
@@ -12,7 +12,7 @@ let startTime;
 let questionText = "";
 
 // Load and display question
-fetch("./texts.json")
+fetch("texts.json")
   .then((res) => res.json())
   .then((data) => {
     questionText = data[Math.floor(Math.random() * data.length)];
@@ -99,7 +99,7 @@ const closeModal = () => {
   resultModal.classList.toggle("hidden");
 };
 
-const start = () => {
+const starts = () => {
   // If already started, do not start again
   if (startTime) return;
 
@@ -107,13 +107,13 @@ const start = () => {
   countdownOverlay.style.display = "flex";
 
   const startCountdown = setInterval(() => {
-    countdownOverlay.innerHTML = '<h1>${count}</h1>';
+    countdownOverlay.innerHTML = `<h1>${count}</h1>`;
 
     // finished timer
     if (count == 0) {
       // -------------- START TYPING -----------------
       document.addEventListener("keydown", typeController);
-      countdownOverlay.style.display = "flex";
+      countdownOverlay.style.display = "none";
       display.classList.remove("inactive");
 
       clearInterval(startCountdown);
@@ -124,7 +124,8 @@ const start = () => {
 };
 
 // START Countdown
-startBtn.addEventListener("click", start);
+startBtn.addEventListener("click", starts);
+
 
 // If history exists, show it
 displayHistory();
@@ -133,7 +134,9 @@ displayHistory();
 setInterval(() => {
   const currentTime = new Date().getTime();
   const timeSpent = (currentTime - startTime) / 1000;
+  // console.log(timeSpent);
+  const timeSpent1 = timeSpent.toFixed(0);
 
 
-  document.getElementById("show-time").innerHTML = `${startTime ? timeSpent : 0} seconds`;
+  document.getElementById("show-time").innerHTML = `${startTime ? timeSpent1 : 0} seconds`;
 }, 1000);
