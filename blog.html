@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+</head>
+<body>
+    <section class=" container"> 
+        <h2 class=" text-primary">What is the difference between local storage and session storage?</h2>
+        <p>The Storage interface of the Web Storage API provides access to a particular domain's session or local storage. It allows, for example, the addition, modification, or deletion of stored data items.”
+
+            localStorage and sessionStorage are almost the same. Both have the following rules:
+            
+            1.They store key/value pairs for a particular domain.
+            The values stored may only be strings.
+            They have a limit of around 5MB of storage space.
+            The one major difference between localStorage and sessionStorage is the expiration date.
+            
+            2.localStorage persists the storage across browser sessions. So even if the domain is opened in a new tab, or the browser is closed and reopened, the storage is saved. There is no expiration.
+            sessionStorage is cleared when the page session ends. A page session lasts as long as the tab or the browser is open. Therefore, when you open a new tab or a new window, this creates a new session and new storage.</p>
+            <br><br>
+            <h2 class=" text-primary">What is difference between global scope and block scope?</h2>
+            <p>In a browser environment, the global scope is controlled by the window object while in Node. js, it's controlled by the global object. Block scopes are what you get when you use if statements, for statements, and the like.</p><br><br>
+
+            <h2 class=" text-primary">How does the event loop work in JavaScript?</h2>
+            <p>The Event Loop has one simple job — to monitor the Call Stack and the Callback Queue. If the Call Stack is empty, the Event Loop will take the first event from the queue and will push it to the Call Stack, which effectively runs it. Such an iteration is called a tick in the Event Loop.</p><br><br>
+
+            <h2 class=" text-primary">How many ways can we get undefined in javascript?</h2>
+            <p>he undefined is a primitive type in JavaScript. So the undefined is a type. And the undefined type has exactly one value that is undefined.
+
+                JavaScript uses the undefined value in the following situations.<br>
+                
+                1) Accessing an uninitialized variable:<br>
+                When you declare a variable and don’t initialize it to a value, the variable will have a value of undefined. <br>
+                2) Accessing a non-existing property of an object:<br>
+                If you access a non-existing property of an object, you’ll get undefined. <br>
+                
+                
+                3) Function parameters:<br>
+                When you call a function with a number of parameters, you often pass the same number of arguments. <br>
+                4) Functions return a value:<br>
+                A function that doesn’t have a return statement implicitly returns undefined.
+                
+                5) Accessing out-of-bounds array elements:<br>
+                When you access an array element that is out-of-bounds, you’ll get the undefined value. For example:
+                
+                const colors = ['red', 'green', 'blue'];
+                console.log(colors[3]); // undefined
+                Code language: JavaScript (javascript)
+                In this example, the colors array doesn’t have any element at index 3. Therefore, the colors[3] returns undefined.</p>
+    </section>
+    
+
+
+    <!-- bootstrap cdn script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+</body>
+</html>

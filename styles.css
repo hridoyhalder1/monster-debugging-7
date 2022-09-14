@@ -10,6 +10,18 @@ body {
   background-position: left top;
   font-family: "Zilla Slab", serif;
 }
+nav{
+  margin-top: 20px;
+}
+nav a {
+  text-decoration: none;
+  margin-left: 200px;
+  color: white;
+  font-size: 30px;
+}
+nav a:hover{
+  border-bottom: 1px solid white;
+}
 
 .box-container {
   width: 70%;
