@@ -23,6 +23,13 @@ nav a:hover{
   border-bottom: 1px solid white;
 }
 
+/* navbar reponsive */
+@media only screen and (max-width: 700px) {
+  nav a{
+    margin-left: 20px;
+  }
+}
+
 .box-container {
   width: 70%;
   margin: 0 auto;
@@ -157,7 +164,7 @@ button {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  
+
 }
 
 .card {
