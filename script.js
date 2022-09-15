@@ -34,7 +34,7 @@ const typeController = (e) => {
     "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ 1234567890!@#$%^&*()_+-={}[]'\".,?";
 
   // if it is not a valid character like Control/Alt then skip displaying anything
-  if (validLetters.includes(newLetter)) {
+  if (!validLetters.includes(newLetter)) {
     return;
   }
 
@@ -68,6 +68,7 @@ const gameOver = () => {
   // so total time taken is current time - start time
   const finishTime = new Date().getTime();
   const timeTaken = (finishTime - startTime) / 1000;
+  const timeTaken1 = timeTaken.toFixed(0);
 
   // show result modal
   resultModal.innerHTML = "";
@@ -80,12 +81,12 @@ const gameOver = () => {
   // show result
   resultModal.innerHTML += `
     <h1>Finished!</h1>
-    <p>You took: <span class="bold">${timeTaken}</span> seconds</p>
+    <p>You took: <span class="bold">${timeTaken1}</span> seconds</p>
     <p>You made <span class="bold red">${errorCount}</span> mistakes</p>
     <button onclick="closeModal()">Close</button>
   `;
 
-  addHistory(questionText, timeTaken, errorCount);
+  addHistory(questionText, timeTaken1, errorCount);
 
   // restart everything
   startTime = null;
