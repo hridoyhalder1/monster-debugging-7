@@ -19,7 +19,7 @@ fetch("texts.json")
     question.innerHTML = questionText;
   });
 
-// checks the user typed character and displays accordingly
+// checks the user typed character and displays accordingly5
 const typeController = (e) => {
   const newLetter = e.key;
 
